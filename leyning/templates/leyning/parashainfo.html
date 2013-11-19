@@ -8,7 +8,13 @@
 		<form action="" method="post">{% csrf_token %}
 			{{ form }}
 		<input type="submit" value="Submit date" />
-		
+		<p>Acceptable input formats:
+			<ul>
+				<li>2006-10-25</li>
+				<li>10/25/2006</li>
+				<li>10/25/06</li>
+			</ul>
+		</p>		
 		<h2>Aliyot for {{ date }}</h2>
 		<ul>
 			{% if aliyot %}

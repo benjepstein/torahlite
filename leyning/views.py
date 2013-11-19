@@ -53,7 +53,7 @@ def hebcal_import(request):
 		new_date_form = DateForm()
 		if my_date_form.is_valid():
 			mydate = hebcalparser.converttosat(my_date_form.cleaned_data["date"])
-			aliyot_info = hebcalparser.getaliyahdata(mydate)["aliyahinfo"]
+			aliyot_info = hebcalparser.getaliyahdata(mydate)["aliyot"]
 			context = {
 			'aliyot': aliyot_info,
 			'date':mydate,
