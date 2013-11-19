@@ -55,6 +55,7 @@ class Aliyah(models.Model):
  		(5,"Chamishi"),
  		(6,"Shishi"), 
  		(7,"Shvi'i"),
+ 		(8,"Maftir"),
  		)
  	#start_chapter = models.IntegerField(default=0)
  	start_verse = models.IntegerField(default=0)

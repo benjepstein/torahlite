@@ -16,14 +16,23 @@
 			</ul>
 		</p>		
 		<h2>Aliyot for {{ date }}</h2>
-		<ul>
-			{% if aliyot %}
-			{% for aliyah in aliyot %}
-			<li><strong>{{ aliyah }}:</strong></li>
-			{% endfor %}
-			{% endif %}
-		</ul>
-
-
+		<table border=1px>
+			<thead>
+				<tr>
+					<th>Aliyah</th>
+					<th>Verses</th>
+					<th>Length</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for aliyah in aliyah_list %}
+				<tr>
+					<td>{{ aliyah.num }}</td>
+					<td>{{ aliyah.begin }} - {{ aliyah.end }}</td>
+					<td>{{ aliyah.numverses }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
 	</body>
 </html>
