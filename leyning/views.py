@@ -125,7 +125,7 @@ def parasha_detail(request, parasha_name):
 				else:
 					aliyahlist[i].leyner = newleyner
 					aliyahlist[i].save()
-			return HttpResponse("Leyners updated!")
+			return HttpResponse("Leyners updated!<br><a href='leyning'>Home</a>")
 		#newleyner = Leyner.objects.get(name=myleynername)
 		#myparasha = Parasha.objects.get(name=parasha_name)
 		#try:
