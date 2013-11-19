@@ -5,7 +5,7 @@ from django.template import RequestContext, loader
 from django import forms
 import datetime
 import hebcalparser
-import bible
+#import bible
 
 from leyning.models import Parasha, Leyner, Aliyah
 
