@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Leyning site</title>
+	</head>
+	<body>
+		<h1>This Week - Shabbat of {{ date }}</h1>
+		
+		<h2>Parashat {{ parasha_name }}: Current Leyners</h2>
+		<table border=1px>
+			<thead>
+				<tr>
+					<th>Aliyah</th>
+					<th>Leyner</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for aliyah in aliyah_list %}
+				<tr>
+					{% if aliyah.leyner %}
+					<td>{{ aliyah }}</td>
+					<td>{{ aliyah.leyner }}</td>
+					{% else %}
+					<td style="color:red"><strong>{{ aliyah }}</strong></td>
+					<td style="color:red"><strong>{{ aliyah.leyner }}</strong></td>
+					{% endif %}
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>		
+
+		<h1>Parasha List</h1>
+			{% if parasha_list %}
+			<!-- This "parasha_list" above is fed in by a "context" feeder when I load the page in urls.py. -->
+		    <ul>
+		    	{% for parasha in parasha_list %}
+		        	<li><a href="/leyning/parasha/{{ parasha.name }}">{{ parasha.name }}</a></li>
+				{% endfor %}
+		    </ul>
+		    {% else %}
+		    <p>No parshiyot!</p>
+			{% endif %}
+	</body>
+</html>

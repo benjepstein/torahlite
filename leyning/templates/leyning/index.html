@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Leyning site</title>
+	</head>
+	<body>
+		<h1>Parshiyot</h1>
+			{% if parasha_list %}
+			<!-- This "parasha_list" above is fed in by a "context" feeder when I load the page in urls.py. -->
+		    <ul>
+		    	{% for parasha in parasha_list %}
+		        	<li><a href="/leyning/parasha/{{ parasha.name }}">{{ parasha.name }}</a></li>
+				{% endfor %}
+		    </ul>
+		    {% else %}
+		    <p>No parshiyot!</p>
+			{% endif %}
+	</body>
+</html>

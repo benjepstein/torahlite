@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Parashat {{ parasha.name }}</title>
+	</head>
+	<body>
+		<h1>Parashat {{ parasha.name }}</h1>
+		<ul> <form action="" method="post">{% csrf_token %}
+			{{ aliyahform.as_ul }}
+		<input type="submit" value="Submit Leyners" />
+		</ul>
+
+		<ul>
+			{% for aliyah in aliyah_list %}
+			<li><strong>{{ aliyah }}:</strong>&nbsp;&nbsp;&nbsp;&nbsp;{{ aliyah.leyner }}</li>
+			{% endfor %}
+		</ul>
+
+
+	</body>
+</html>

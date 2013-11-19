@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Parashat {{ parasha.name }}</title>
+	</head>
+	<body>
+		<h1>Find aliyot list</h1>
+		<form action="" method="post">{% csrf_token %}
+			{{ form }}
+		<input type="submit" value="Submit date" />
+		
+		<h2>Aliyot for {{ date }}</h2>
+		<ul>
+			{% if aliyot %}
+			{% for aliyah in aliyot %}
+			<li><strong>{{ aliyah }}:</strong></li>
+			{% endfor %}
+			{% endif %}
+		</ul>
+
+
+	</body>
+</html>
