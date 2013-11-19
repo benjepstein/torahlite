@@ -10,12 +10,27 @@
 		<input type="submit" value="Submit Leyners" />
 		</ul>
 
-		<ul>
-			{% for aliyah in aliyah_list %}
-			<li><strong>{{ aliyah }}:</strong>&nbsp;&nbsp;&nbsp;&nbsp;{{ aliyah.leyner }}</li>
-			{% endfor %}
-		</ul>
 
-
+		<table border=1px>
+			<thead>
+				<tr>
+					<th>Aliyah</th>
+					<th>Leyner</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for aliyah in aliyah_list %}
+				<tr>
+					{% if aliyah.leyner %}
+					<td><strong>{{ aliyah }}</strong></td>
+					<td>{{ aliyah.leyner }}</td>
+					{% else %}
+					<td style="color:red"><strong>{{ aliyah }}</strong></td>
+					<td style="color:red"><strong>{{ aliyah.leyner }}</strong></td>
+					{% endif %}
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
 	</body>
 </html>
